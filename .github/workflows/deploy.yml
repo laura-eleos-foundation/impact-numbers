@@ -8,7 +8,13 @@ on:
 
 jobs:
   build-and-deploy:
+    permissions:
+      pages: write
+      id-token: write
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
@@ -21,7 +27,7 @@ jobs:
           pip install -r requirements.txt
       - name: Run Python script and generate output
         run: |
-          flask --app main run
+          python freeze.py
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

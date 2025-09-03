@@ -1,0 +1,20 @@
+    body {
+       color: #1c335a;
+       font-family: quincy-cf, serif;
+       text-align: center;
+       font-size: large;
+    }
+
+    title {
+        color: #1c335a;
+        font-family: quincy-cf, serif;
+    }
+    img {
+      text-align: center;
+    }
+    h2 {
+       color: #1c335a;
+       font-family: quincy-cf, serif;
+       text-align: center;
+       font-size: xxx-large;
+    }
