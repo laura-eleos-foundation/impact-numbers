@@ -37,3 +37,5 @@ pypdfium2~=4.30.0
 click~=8.2.1
 cachetools~=6.2.0
 blinker~=1.9.0
+flask~=3.1.2
+Werkzeug~=3.1.3
