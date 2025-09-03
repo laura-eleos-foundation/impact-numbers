@@ -28,6 +28,10 @@ jobs:
       - name: Run Python script and generate output
         run: |
           python freeze.py
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build/static
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
