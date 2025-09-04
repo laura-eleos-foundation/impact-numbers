@@ -32,6 +32,10 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./build
+      - name: Upload Pages artifact static
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build/static
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
