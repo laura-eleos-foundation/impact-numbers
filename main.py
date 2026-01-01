@@ -248,7 +248,7 @@ def index():
                                 pack_size = parse_pack_size(desc_lower)
                                 undies_quantities += update_variables("undies", year, month, pack_size, mulitply_by, price_extracted)
 
-                            if "sports bra" in desc_lower:
+                            if "sports bra" in desc_lower or "bralette" in desc_lower:
                                 pack_size = parse_pack_size(desc_lower)
                                 bra_quantities += update_variables("bras", year, month, pack_size, mulitply_by, price_extracted)
 
@@ -370,7 +370,7 @@ def index():
                             total_pads_Sept = years_totals[current_year]["september"]["pads"]["quantity"],
                             total_pads_Oct = years_totals[current_year]["october"]["pads"]["quantity"],
                             total_pads_Nov = years_totals[current_year]["november"]["pads"]["quantity"],
-                            total_pads_Dec = years_totals[current_year]["january"]["pads"]["quantity"],
+                            total_pads_Dec = years_totals[current_year]["december"]["pads"]["quantity"],
                             prices_pads_Jan = years_totals[current_year]["january"]["pads"]["total_prices"],
                             prices_pads_Feb = years_totals[current_year]["february"]["pads"]["total_prices"],
                             prices_pads_March = years_totals[current_year]["march"]["pads"]["total_prices"],
@@ -382,7 +382,7 @@ def index():
                             prices_pads_Sept = years_totals[current_year]["september"]["pads"]["total_prices"],
                             prices_pads_Oct = years_totals[current_year]["october"]["pads"]["total_prices"],
                             prices_pads_Nov = years_totals[current_year]["november"]["pads"]["total_prices"],
-                            prices_pads_Dec = years_totals[current_year]["january"]["pads"]["total_prices"],
+                            prices_pads_Dec = years_totals[current_year]["december"]["pads"]["total_prices"],
                             total_tampons_Jan = years_totals[current_year]["january"]["tampons"]["quantity"],
                             total_tampons_Feb = years_totals[current_year]["february"]["tampons"]["quantity"],
                             total_tampons_March = years_totals[current_year]["march"]["tampons"]["quantity"],
@@ -394,7 +394,7 @@ def index():
                             total_tampons_Sept = years_totals[current_year]["september"]["tampons"]["quantity"],
                             total_tampons_Oct = years_totals[current_year]["october"]["tampons"]["quantity"],
                             total_tampons_Nov = years_totals[current_year]["november"]["tampons"]["quantity"],
-                            total_tampons_Dec = years_totals[current_year]["january"]["tampons"]["quantity"],
+                            total_tampons_Dec = years_totals[current_year]["december"]["tampons"]["quantity"],
                             prices_tampons_Jan = years_totals[current_year]["january"]["tampons"]["total_prices"],
                             prices_tampons_Feb = years_totals[current_year]["february"]["tampons"]["total_prices"],
                             prices_tampons_March = years_totals[current_year]["march"]["tampons"]["total_prices"],
@@ -406,7 +406,7 @@ def index():
                             prices_tampons_Sept = years_totals[current_year]["september"]["tampons"]["total_prices"],
                             prices_tampons_Oct = years_totals[current_year]["october"]["tampons"]["total_prices"],
                             prices_tampons_Nov = years_totals[current_year]["november"]["tampons"]["total_prices"],
-                            prices_tampons_Dec = years_totals[current_year]["january"]["tampons"]["total_prices"],
+                            prices_tampons_Dec = years_totals[current_year]["december"]["tampons"]["total_prices"],
                             total_undies_Jan = years_totals[current_year]["january"]["undies"]["quantity"],
                             total_undies_Feb = years_totals[current_year]["february"]["undies"]["quantity"],
                             total_undies_March = years_totals[current_year]["march"]["undies"]["quantity"],
@@ -418,7 +418,7 @@ def index():
                             total_undies_Sept = years_totals[current_year]["september"]["undies"]["quantity"],
                             total_undies_Oct = years_totals[current_year]["october"]["undies"]["quantity"],
                             total_undies_Nov = years_totals[current_year]["november"]["undies"]["quantity"],
-                            total_undies_Dec = years_totals[current_year]["january"]["undies"]["quantity"],
+                            total_undies_Dec = years_totals[current_year]["december"]["undies"]["quantity"],
                             prices_undies_Jan = years_totals[current_year]["january"]["undies"]["total_prices"],
                             prices_undies_Feb = years_totals[current_year]["february"]["undies"]["total_prices"],
                             prices_undies_March = years_totals[current_year]["march"]["undies"]["total_prices"],
@@ -430,7 +430,7 @@ def index():
                             prices_undies_Sept = years_totals[current_year]["september"]["undies"]["total_prices"],
                             prices_undies_Oct = years_totals[current_year]["october"]["undies"]["total_prices"],
                             prices_undies_Nov = years_totals[current_year]["november"]["undies"]["total_prices"],
-                            prices_undies_Dec = years_totals[current_year]["january"]["undies"]["total_prices"],
+                            prices_undies_Dec = years_totals[current_year]["december"]["undies"]["total_prices"],
                             total_bras_Jan = years_totals[current_year]["january"]["bras"]["quantity"],
                             total_bras_Feb = years_totals[current_year]["february"]["bras"]["quantity"],
                             total_bras_March = years_totals[current_year]["march"]["bras"]["quantity"],
@@ -442,7 +442,7 @@ def index():
                             total_bras_Sept = years_totals[current_year]["september"]["bras"]["quantity"],
                             total_bras_Oct = years_totals[current_year]["october"]["bras"]["quantity"],
                             total_bras_Nov = years_totals[current_year]["november"]["bras"]["quantity"],
-                            total_bras_Dec = years_totals[current_year]["january"]["bras"]["quantity"],
+                            total_bras_Dec = years_totals[current_year]["december"]["bras"]["quantity"],
                             prices_bras_Jan = years_totals[current_year]["january"]["bras"]["total_prices"],
                             prices_bras_Feb = years_totals[current_year]["february"]["bras"]["total_prices"],
                             prices_bras_March = years_totals[current_year]["march"]["bras"]["total_prices"],
@@ -454,7 +454,7 @@ def index():
                             prices_bras_Sept = years_totals[current_year]["september"]["bras"]["total_prices"],
                             prices_bras_Oct = years_totals[current_year]["october"]["bras"]["total_prices"],
                             prices_bras_Nov = years_totals[current_year]["november"]["bras"]["total_prices"],
-                            prices_bras_Dec = years_totals[current_year]["january"]["bras"]["total_prices"],
+                            prices_bras_Dec = years_totals[current_year]["december"]["bras"]["total_prices"],
                             total_shower_Jan = years_totals[current_year]["january"]["shower"]["quantity"],
                             total_shower_Feb = years_totals[current_year]["february"]["shower"]["quantity"],
                             total_shower_March = years_totals[current_year]["march"]["shower"]["quantity"],
@@ -466,7 +466,7 @@ def index():
                             total_shower_Sept = years_totals[current_year]["september"]["shower"]["quantity"],
                             total_shower_Oct = years_totals[current_year]["october"]["shower"]["quantity"],
                             total_shower_Nov = years_totals[current_year]["november"]["shower"]["quantity"],
-                            total_shower_Dec = years_totals[current_year]["january"]["shower"]["quantity"],
+                            total_shower_Dec = years_totals[current_year]["december"]["shower"]["quantity"],
                             prices_shower_Jan = years_totals[current_year]["january"]["shower"]["total_prices"],
                             prices_shower_Feb = years_totals[current_year]["february"]["shower"]["total_prices"],
                             prices_shower_March = years_totals[current_year]["march"]["shower"]["total_prices"],
@@ -478,7 +478,7 @@ def index():
                             prices_shower_Sept = years_totals[current_year]["september"]["shower"]["total_prices"],
                             prices_shower_Oct = years_totals[current_year]["october"]["shower"]["total_prices"],
                             prices_shower_Nov = years_totals[current_year]["november"]["shower"]["total_prices"],
-                            prices_shower_Dec = years_totals[current_year]["january"]["shower"]["total_prices"],
+                            prices_shower_Dec = years_totals[current_year]["december"]["shower"]["total_prices"],
                             total_dental_Jan = years_totals[current_year]["january"]["dental"]["quantity"],
                             total_dental_Feb = years_totals[current_year]["february"]["dental"]["quantity"],
                             total_dental_March = years_totals[current_year]["march"]["dental"]["quantity"],
@@ -490,7 +490,7 @@ def index():
                             total_dental_Sept = years_totals[current_year]["september"]["dental"]["quantity"],
                             total_dental_Oct = years_totals[current_year]["october"]["dental"]["quantity"],
                             total_dental_Nov = years_totals[current_year]["november"]["dental"]["quantity"],
-                            total_dental_Dec = years_totals[current_year]["january"]["dental"]["quantity"],
+                            total_dental_Dec = years_totals[current_year]["december"]["dental"]["quantity"],
                             prices_dental_Jan = years_totals[current_year]["january"]["dental"]["total_prices"],
                             prices_dental_Feb = years_totals[current_year]["february"]["dental"]["total_prices"],
                             prices_dental_March = years_totals[current_year]["march"]["dental"]["total_prices"],
@@ -502,7 +502,7 @@ def index():
                             prices_dental_Sept = years_totals[current_year]["september"]["dental"]["total_prices"],
                             prices_dental_Oct = years_totals[current_year]["october"]["dental"]["total_prices"],
                             prices_dental_Nov = years_totals[current_year]["november"]["dental"]["total_prices"],
-                            prices_dental_Dec = years_totals[current_year]["january"]["dental"]["total_prices"],
+                            prices_dental_Dec = years_totals[current_year]["december"]["dental"]["total_prices"],
                             total_other_Jan = years_totals[current_year]["january"]["other"]["quantity"],
                             total_other_Feb = years_totals[current_year]["february"]["other"]["quantity"],
                             total_other_March = years_totals[current_year]["march"]["other"]["quantity"],
@@ -514,7 +514,7 @@ def index():
                             total_other_Sept = years_totals[current_year]["september"]["other"]["quantity"],
                             total_other_Oct = years_totals[current_year]["october"]["other"]["quantity"],
                             total_other_Nov = years_totals[current_year]["november"]["other"]["quantity"],
-                            total_other_Dec = years_totals[current_year]["january"]["other"]["quantity"],
+                            total_other_Dec = years_totals[current_year]["december"]["other"]["quantity"],
                             prices_other_Jan = years_totals[current_year]["january"]["other"]["total_prices"],
                             prices_other_Feb = years_totals[current_year]["february"]["other"]["total_prices"],
                             prices_other_March = years_totals[current_year]["march"]["other"]["total_prices"],
@@ -526,7 +526,7 @@ def index():
                             prices_other_Sept = years_totals[current_year]["september"]["other"]["total_prices"],
                             prices_other_Oct = years_totals[current_year]["october"]["other"]["total_prices"],
                             prices_other_Nov = years_totals[current_year]["november"]["other"]["total_prices"],
-                            prices_other_Dec = years_totals[current_year]["january"]["other"]["total_prices"])
+                            prices_other_Dec = years_totals[current_year]["december"]["other"]["total_prices"])
 
 
 
