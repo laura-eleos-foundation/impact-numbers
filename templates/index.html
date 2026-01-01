@@ -22,16 +22,483 @@
            text-align: center;
            font-size: xxx-large;
         }
+        .AllTimeNumbers{
+            font-size: xx-large;
+        }
+        td, th {
+          padding: 10px;
+        }
+        caption {
+            font-size: x-large;
+            font-weight: bold;
+        }
     </style>
 </head>
 
 <h2>Eleos Foundation Impact Numbers</h2>
+<img src="./static/eleos_navy_orange.PNG" style="text-align:center;height:128px;">
 
 <body>
-<p>Total Pads: {{ total_pads }}</p>
-<p>Total Tampons: {{ total_tampons }}</p>
-<p>Total Underwear: {{ total_undies }}</p>
-<p>Total Bras: {{ total_bras }}</p>
+<div class="AllTimeNumbers">
+    <p>Total Pads of All Time: {{ total_pads }}</p>
+    <p>Total Tampons of All Time: {{ total_tampons }}</p>
+    <p>Total Underwear of All Time: {{ total_undies }}</p>
+    <p>Total Bras of All Time: {{ total_bras }}</p>
+</div>
+
+
+<br>
+<p>Total Pads this year: {{ total_pads_year }} </p>
+<p>Total Cost of Pads this year: ${{ prices_pads_year }}</p>
+<p>Total Tampons this year: {{ total_tampons_year }} </p>
+<p>Total Cost of Tampons this year: ${{ prices_tampons_year }}</p>
+<p>Total Underwear this year: {{ total_undies_year }} </p>
+<p>Total Cost of Underwear this year: ${{ prices_undies_year }}</p>
+<p>Total Bras year: {{ total_bras_year }} </p>
+<p>Total Cost of Bras this year: ${{ prices_bras_year }}</p>
+<p>Total Dental year: {{ total_dental_year }}</p>
+<p>Total Cost of Dental this year: ${{ prices_dental_year }}</p>
+<p>Total Shower year: {{ total_shower_year }}</p>
+<p>Total Cost of Shower this year: ${{ prices_shower_year }}</p>
+<p>Total Other year: {{ total_other_year }}</p>
+<p>Total Cost of Other this year: ${{ prices_other_year }}</p>
+<br>
+
+<table border="1" class="center">
+    <caption> January Numbers</caption>
+    <tr>
+        <th>Pads</th>
+        <th>Pads Cost</th>
+        <th>Tampons</th>
+        <th>Tampons Cost</th>
+        <th>Bras</th>
+        <th>Bras Cost</th>
+        <th>Undergarments</th>
+        <th>Undergarments Cost</th>
+        <th>Shower</th>
+        <th>Shower Cost </th>
+        <th>Dental</th>
+        <th>Dental Cost</th>
+        <th>Other</th>
+        <th>Other Cost</th>
+    </tr>
+    <tr>
+        <td>{{total_pads_Jan}}</td>
+        <td>${{prices_pads_Jan}}</td>
+        <td>{{total_tampons_Jan}}</td>
+        <td>${{prices_tampons_Jan}}</td>
+        <td>{{total_bras_Jan}}</td>
+        <td>${{prices_bras_Jan}}</td>
+        <td>{{total_undies_Jan}}</td>
+        <td>${{prices_undies_Jan}}</td>
+        <td>{{total_shower_Jan}}</td>
+        <td>${{prices_shower_Jan}}</td>
+        <td>{{total_dental_Jan}}</td>
+        <td>${{prices_dental_Jan}}</td>
+        <td>{{total_other_Jan}}</td>
+        <td>${{prices_other_Jan}}</td>
+    </tr>
+</table>
+<br>
+<table border="1" class="center">
+    <caption> February Numbers</caption>
+    <tr>
+        <th>Pads</th>
+        <th>Pads Cost</th>
+        <th>Tampons</th>
+        <th>Tampons Cost</th>
+        <th>Bras</th>
+        <th>Bras Cost</th>
+        <th>Undergarments</th>
+        <th>Undergarments Cost</th>
+        <th>Shower</th>
+        <th>Shower Cost </th>
+        <th>Dental</th>
+        <th>Dental Cost</th>
+        <th>Other</th>
+        <th>Other Cost</th>
+    </tr>
+    <tr>
+        <td>{{total_pads_Feb}}</td>
+        <td>${{prices_pads_Feb}}</td>
+        <td>{{total_tampons_Feb}}</td>
+        <td>${{prices_tampons_Feb}}</td>
+        <td>{{total_bras_Feb}}</td>
+        <td>${{prices_bras_Feb}}</td>
+        <td>{{total_undies_Feb}}</td>
+        <td>${{prices_undies_Feb}}</td>
+        <td>{{total_shower_Feb}}</td>
+        <td>${{prices_shower_Feb}}</td>
+        <td>{{total_dental_Feb}}</td>
+        <td>${{prices_dental_Feb}}</td>
+        <td>{{total_other_Feb}}</td>
+        <td>${{prices_other_Feb}}</td>
+    </tr>
+</table>
+<br>
+<table border="1" class="center">
+    <caption> March Numbers</caption>
+    <tr>
+        <th>Pads</th>
+        <th>Pads Cost</th>
+        <th>Tampons</th>
+        <th>Tampons Cost</th>
+        <th>Bras</th>
+        <th>Bras Cost</th>
+        <th>Undergarments</th>
+        <th>Undergarments Cost</th>
+        <th>Shower</th>
+        <th>Shower Cost </th>
+        <th>Dental</th>
+        <th>Dental Cost</th>
+        <th>Other</th>
+        <th>Other Cost</th>
+    </tr>
+    <tr>
+        <td>{{total_pads_March}}</td>
+        <td>${{prices_pads_March}}</td>
+        <td>{{total_tampons_March}}</td>
+        <td>${{prices_tampons_March}}</td>
+        <td>{{total_bras_March}}</td>
+        <td>${{prices_bras_March}}</td>
+        <td>{{total_undies_March}}</td>
+        <td>${{prices_undies_March}}</td>
+        <td>{{total_shower_March}}</td>
+        <td>${{prices_shower_March}}</td>
+        <td>{{total_dental_March}}</td>
+        <td>${{prices_dental_March}}</td>
+        <td>{{total_other_March}}</td>
+        <td>${{prices_other_March}}</td>
+    </tr>
+</table>
+<br>
+<table border="1" class="center">
+    <caption> April Numbers</caption>
+    <tr>
+        <th>Pads</th>
+        <th>Pads Cost</th>
+        <th>Tampons</th>
+        <th>Tampons Cost</th>
+        <th>Bras</th>
+        <th>Bras Cost</th>
+        <th>Undergarments</th>
+        <th>Undergarments Cost</th>
+        <th>Shower</th>
+        <th>Shower Cost </th>
+        <th>Dental</th>
+        <th>Dental Cost</th>
+        <th>Other</th>
+        <th>Other Cost</th>
+    </tr>
+    <tr>
+        <td>{{total_pads_April}}</td>
+        <td>${{prices_pads_April}}</td>
+        <td>{{total_tampons_April}}</td>
+        <td>${{prices_tampons_April}}</td>
+        <td>{{total_bras_April}}</td>
+        <td>${{prices_bras_April}}</td>
+        <td>{{total_undies_April}}</td>
+        <td>${{prices_undies_April}}</td>
+        <td>{{total_shower_April}}</td>
+        <td>${{prices_shower_April}}</td>
+        <td>{{total_dental_April}}</td>
+        <td>${{prices_dental_April}}</td>
+        <td>{{total_other_April}}</td>
+        <td>${{prices_other_April}}</td>
+    </tr>
+</table>
+<br>
+<table border="1" class="center">
+    <caption> May Numbers</caption>
+    <tr>
+        <th>Pads</th>
+        <th>Pads Cost</th>
+        <th>Tampons</th>
+        <th>Tampons Cost</th>
+        <th>Bras</th>
+        <th>Bras Cost</th>
+        <th>Undergarments</th>
+        <th>Undergarments Cost</th>
+        <th>Shower</th>
+        <th>Shower Cost </th>
+        <th>Dental</th>
+        <th>Dental Cost</th>
+        <th>Other</th>
+        <th>Other Cost</th>
+    </tr>
+    <tr>
+        <td>{{total_pads_May}}</td>
+        <td>${{prices_pads_May}}</td>
+        <td>{{total_tampons_May}}</td>
+        <td>${{prices_tampons_May}}</td>
+        <td>{{total_bras_May}}</td>
+        <td>${{prices_bras_May}}</td>
+        <td>{{total_undies_May}}</td>
+        <td>${{prices_undies_May}}</td>
+        <td>{{total_shower_May}}</td>
+        <td>${{prices_shower_May}}</td>
+        <td>{{total_dental_May}}</td>
+        <td>${{prices_dental_May}}</td>
+        <td>{{total_other_May}}</td>
+        <td>${{prices_other_May}}</td>
+    </tr>
+</table>
+
+<br>
+<table border="1" class="center">
+    <caption> June Numbers</caption>
+    <tr>
+        <th>Pads</th>
+        <th>Pads Cost</th>
+        <th>Tampons</th>
+        <th>Tampons Cost</th>
+        <th>Bras</th>
+        <th>Bras Cost</th>
+        <th>Undergarments</th>
+        <th>Undergarments Cost</th>
+        <th>Shower</th>
+        <th>Shower Cost </th>
+        <th>Dental</th>
+        <th>Dental Cost</th>
+        <th>Other</th>
+        <th>Other Cost</th>
+    </tr>
+    <tr>
+        <td>{{total_pads_June}}</td>
+        <td>${{prices_pads_June}}</td>
+        <td>{{total_tampons_June}}</td>
+        <td>${{prices_tampons_June}}</td>
+        <td>{{total_bras_June}}</td>
+        <td>${{prices_bras_June}}</td>
+        <td>{{total_undies_June}}</td>
+        <td>${{prices_undies_June}}</td>
+        <td>{{total_shower_June}}</td>
+        <td>${{prices_shower_June}}</td>
+        <td>{{total_dental_June}}</td>
+        <td>${{prices_dental_June}}</td>
+        <td>{{total_other_June}}</td>
+        <td>${{prices_other_June}}</td>
+    </tr>
+</table>
+<br>
+
+<table border="1" class="center">
+    <caption> July Numbers</caption>
+    <tr>
+        <th>Pads</th>
+        <th>Pads Cost</th>
+        <th>Tampons</th>
+        <th>Tampons Cost</th>
+        <th>Bras</th>
+        <th>Bras Cost</th>
+        <th>Undergarments</th>
+        <th>Undergarments Cost</th>
+        <th>Shower</th>
+        <th>Shower Cost </th>
+        <th>Dental</th>
+        <th>Dental Cost</th>
+        <th>Other</th>
+        <th>Other Cost</th>
+    </tr>
+    <tr>
+        <td>{{total_pads_July}}</td>
+        <td>${{prices_pads_July}}</td>
+        <td>{{total_tampons_July}}</td>
+        <td>${{prices_tampons_July}}</td>
+        <td>{{total_bras_July}}</td>
+        <td>${{prices_bras_July}}</td>
+        <td>{{total_undies_July}}</td>
+        <td>${{prices_undies_July}}</td>
+        <td>{{total_shower_July}}</td>
+        <td>${{prices_shower_July}}</td>
+        <td>{{total_dental_July}}</td>
+        <td>${{prices_dental_July}}</td>
+        <td>{{total_other_July}}</td>
+        <td>${{prices_other_July}}</td>
+    </tr>
+</table>
+<br>
+<table border="1" class="center">
+    <caption> August Numbers</caption>
+    <tr>
+        <th>Pads</th>
+        <th>Pads Cost</th>
+        <th>Tampons</th>
+        <th>Tampons Cost</th>
+        <th>Bras</th>
+        <th>Bras Cost</th>
+        <th>Undergarments</th>
+        <th>Undergarments Cost</th>
+        <th>Shower</th>
+        <th>Shower Cost </th>
+        <th>Dental</th>
+        <th>Dental Cost</th>
+        <th>Other</th>
+        <th>Other Cost</th>
+    </tr>
+    <tr>
+        <td>{{total_pads_August}}</td>
+        <td>${{prices_pads_August}}</td>
+        <td>{{total_tampons_August}}</td>
+        <td>${{prices_tampons_August}}</td>
+        <td>{{total_bras_August}}</td>
+        <td>${{prices_bras_August}}</td>
+        <td>{{total_undies_August}}</td>
+        <td>${{prices_undies_August}}</td>
+        <td>{{total_shower_August}}</td>
+        <td>${{prices_shower_August}}</td>
+        <td>{{total_dental_August}}</td>
+        <td>${{prices_dental_August}}</td>
+        <td>{{total_other_August}}</td>
+        <td>${{prices_other_August}}</td>
+    </tr>
+</table>
+<br>
+<table border="1" class="center">
+    <caption> September Numbers</caption>
+    <tr>
+        <th>Pads</th>
+        <th>Pads Cost</th>
+        <th>Tampons</th>
+        <th>Tampons Cost</th>
+        <th>Bras</th>
+        <th>Bras Cost</th>
+        <th>Undergarments</th>
+        <th>Undergarments Cost</th>
+        <th>Shower</th>
+        <th>Shower Cost </th>
+        <th>Dental</th>
+        <th>Dental Cost</th>
+        <th>Other</th>
+        <th>Other Cost</th>
+    </tr>
+    <tr>
+        <td>{{total_pads_Sept}}</td>
+        <td>${{prices_pads_Sept}}</td>
+        <td>{{total_tampons_Sept}}</td>
+        <td>${{prices_tampons_Sept}}</td>
+        <td>{{total_bras_Sept}}</td>
+        <td>${{prices_bras_Sept}}</td>
+        <td>{{total_undies_Sept}}</td>
+        <td>${{prices_undies_Sept}}</td>
+        <td>{{total_shower_Sept}}</td>
+        <td>${{prices_shower_Sept}}</td>
+        <td>{{total_dental_Sept}}</td>
+        <td>${{prices_dental_Sept}}</td>
+        <td>{{total_other_Sept}}</td>
+        <td>${{prices_other_Sept}}</td>
+    </tr>
+</table>
+<br>
+<table border="1" class="center">
+    <caption> October Numbers</caption>
+    <tr>
+        <th>Pads</th>
+        <th>Pads Cost</th>
+        <th>Tampons</th>
+        <th>Tampons Cost</th>
+        <th>Bras</th>
+        <th>Bras Cost</th>
+        <th>Undergarments</th>
+        <th>Undergarments Cost</th>
+        <th>Shower</th>
+        <th>Shower Cost </th>
+        <th>Dental</th>
+        <th>Dental Cost</th>
+        <th>Other</th>
+        <th>Other Cost</th>
+    </tr>
+    <tr>
+        <td>{{total_pads_Oct}}</td>
+        <td>${{prices_pads_Oct}}</td>
+        <td>{{total_tampons_Oct}}</td>
+        <td>${{prices_tampons_Oct}}</td>
+        <td>{{total_bras_Oct}}</td>
+        <td>${{prices_bras_Oct}}</td>
+        <td>{{total_undies_Oct}}</td>
+        <td>${{prices_undies_Oct}}</td>
+        <td>{{total_shower_Oct}}</td>
+        <td>${{prices_shower_Oct}}</td>
+        <td>{{total_dental_Oct}}</td>
+        <td>${{prices_dental_Oct}}</td>
+        <td>{{total_other_Oct}}</td>
+        <td>${{prices_other_Oct}}</td>
+    </tr>
+</table>
+<br>
+<table border="1" class="center">
+    <caption> November Numbers</caption>
+    <tr>
+        <th>Pads</th>
+        <th>Pads Cost</th>
+        <th>Tampons</th>
+        <th>Tampons Cost</th>
+        <th>Bras</th>
+        <th>Bras Cost</th>
+        <th>Undergarments</th>
+        <th>Undergarments Cost</th>
+        <th>Shower</th>
+        <th>Shower Cost </th>
+        <th>Dental</th>
+        <th>Dental Cost</th>
+        <th>Other</th>
+        <th>Other Cost</th>
+    </tr>
+    <tr>
+        <td>{{total_pads_Nov}}</td>
+        <td>${{prices_pads_Nov}}</td>
+        <td>{{total_tampons_Nov}}</td>
+        <td>${{prices_tampons_Nov}}</td>
+        <td>{{total_bras_Nov}}</td>
+        <td>${{prices_bras_Nov}}</td>
+        <td>{{total_undies_Nov}}</td>
+        <td>${{prices_undies_Nov}}</td>
+        <td>{{total_shower_Nov}}</td>
+        <td>${{prices_shower_Nov}}</td>
+        <td>{{total_dental_Nov}}</td>
+        <td>${{prices_dental_Nov}}</td>
+        <td>{{total_other_Nov}}</td>
+        <td>${{prices_other_Nov}}</td>
+    </tr>
+</table>
+<br>
+<table border="1" class="center">
+    <caption> December Numbers</caption>
+    <tr>
+        <th>Pads</th>
+        <th>Pads Cost</th>
+        <th>Tampons</th>
+        <th>Tampons Cost</th>
+        <th>Bras</th>
+        <th>Bras Cost</th>
+        <th>Undergarments</th>
+        <th>Undergarments Cost</th>
+        <th>Shower</th>
+        <th>Shower Cost </th>
+        <th>Dental</th>
+        <th>Dental Cost</th>
+        <th>Other</th>
+        <th>Other Cost</th>
+    </tr>
+    <tr>
+        <td>{{total_pads_Dec}}</td>
+        <td>${{prices_pads_Dec}}</td>
+        <td>{{total_tampons_Dec}}</td>
+        <td>${{prices_tampons_Dec}}</td>
+        <td>{{total_bras_Dec}}</td>
+        <td>${{prices_bras_Dec}}</td>
+        <td>{{total_undies_Dec}}</td>
+        <td>${{prices_undies_Dec}}</td>
+        <td>{{total_shower_Dec}}</td>
+        <td>${{prices_shower_Dec}}</td>
+        <td>{{total_dental_Dec}}</td>
+        <td>${{prices_dental_Dec}}</td>
+        <td>{{total_other_Dec}}</td>
+        <td>${{prices_other_Dec}}</td>
+    </tr>
+</table>
+<br>
+
 <img src="./static/eleos_navy_orange.PNG" style="text-align:center;height:128px;">
 </body>
 </html>
