@@ -27,7 +27,7 @@ months_dict = {"january": items_dict,
           }
 
 years = ["2025", "2026"]
-months = ["january", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
+months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
 data = ["quantity", "total_prices"]
 items = ["pads", "tampons", "undies", "bras", "dental", "shower", "other"]
 data_dict = {"quantity": 0.00, "total_prices": 0.00}
@@ -100,7 +100,7 @@ def extract_items_from_text(text):
 
     if len(chunks) > 1:
         # The first chunk is just the description of the first item
-        current_desc = chunks[0].strip().split('\n')[-1] # Take the last non-empty line of the header section
+        #current_desc = chunks[0].strip().split('\n')[-1] # Take the last non-empty line of the header section
         # Actually, pypdf text extraction often dumps the image text ("Arriving Wednesday") then the item name.
         # Let's try to grab the bulk of the text before "Sold by"
 
@@ -175,26 +175,22 @@ def parse_pack_size(description):
     """
     # Pattern 3: "X Count" (common for pads/tampons) #112 count, (4 packs of 28)
     match = re.search(r'\b(\d+)\s?count', description, re.IGNORECASE)
-    if match and "total" not in description: #and ("pack of" in description or "packs of" in description):
-        #print("matched X Count: ", description, "with count: ", int(match.group(1)))
+    if match and "total" not in description:
         return int(match.group(1))
 
     # Pattern 1: "Pack of X" #(Pack Of 10)
     match = re.search(r'pack of (\d+)', description, re.IGNORECASE)
     if match and "count" not in description:
-        #print("matched Pack of X: ", description, "with count: ", int(match.group(1)))
         return int(match.group(1))
 
     # Pattern 2: "X -Pack" (e.g., 3 Pack) #10 Count (Pack of 1)
     match = re.search(r'\b(\d+)\s?(-)?pack', description, re.IGNORECASE)
     if match and "count" not in description:
-        #print("matched X Pack: ", description, "with count: ", int(match.group(1)))
         return int(match.group(1))
 
     #50Count x 2 Packs (100 Count Total)
     match = re.search(r'\b(\d+)\s?count total', description, re.IGNORECASE)
     if match:
-        #print("matched X Count Total: ", description, "with count: ", int(match.group(1)))
         return int(match.group(1))
     split_space = description.split(" ")
     if split_space[-1].isnumeric():
@@ -284,10 +280,10 @@ def index():
         print("total dental: ", dental_quantities)
         print("total other: ", other_quantities)
 
-        current_year = "2025" #str(datetime.now().year)
+        current_year = "2025" #str(datetime.now().year) #"2025" #uncomment to get previous years numbers
         print("current year: ", current_year)
-        current_month = datetime.now().strftime("%B")
-        print("current month: ", current_month)
+        #current_month = datetime.now().strftime("%B")
+        #print("current month: ", current_month)
         ''''
         total_dental_Jan = years_totals[current_year]["january"]["dental"]["quantity"]
         total_dental_Feb = years_totals[current_year]["february"]["dental"]["quantity"]
@@ -319,7 +315,7 @@ def index():
         prices_other_year = 0.00
         for year, month_dict in years_totals.items():
             for month, month_item in month_dict.items():
-                if int(year) == int("2025"):
+                if int(year) == int("2025"): #"2025" #uncomment to get previous years numbers and total
                     total_pads_year += round(years_totals[year][month]["pads"]["quantity"])
                     prices_pads_year += round(years_totals[year][month]["pads"]["total_prices"], 2)
                     print("year: ", year, "month", month, "total pads", years_totals[year][month]["pads"]["quantity"], "total price", years_totals[year][month]["pads"]["total_prices"])
