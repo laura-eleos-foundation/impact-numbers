@@ -5,6 +5,7 @@ import re
 from datetime import datetime
 import calendar
 
+order_numbers = {}
 items_dict = {"pads": {"quantity": 0.00, "total_prices": 0.00},
              "tampons": {"quantity": 0.00, "total_prices": 0.00},
              "undies": {"quantity": 0.00, "total_prices": 0.00},
@@ -43,7 +44,7 @@ for year in years:
 
 app = Flask(__name__)
 
-def extract_items_from_text(text):
+def extract_items_from_text(text, filename):
     """
     Parses the raw text to find items and their quantities.
     Handles two common Amazon receipt text layouts.
@@ -52,8 +53,12 @@ def extract_items_from_text(text):
     month = ""
     year = ""
 
+    file_name_match = re.search(r'(.*?)(.pdf)', filename, re.IGNORECASE)
+    #print(file_name_match.group(1))
     date_match = re.search(r'(Order placed)(.*?)(?=\n|\$Amazon.com order number)', text, re.IGNORECASE)
     if date_match:
+        #print(date_match.group(2))
+        order_numbers[date_match.group(2)] = file_name_match.group(1)
         splitSpace= date_match.group(2).split(" ")
         if splitSpace[3] == "Order":
             month = splitSpace[0]
@@ -192,9 +197,16 @@ def parse_pack_size(description):
     match = re.search(r'\b(\d+)\s?count total', description, re.IGNORECASE)
     if match:
         return int(match.group(1))
+
     split_space = description.split(" ")
     if split_space[-1].isnumeric():
         return int(split_space[-1])
+    #default for sports bra and no count
+    if "sports bra" in description:
+        return 5
+    #default for underwear and no count
+    if "underwear" in description:
+        return 10
     return 1
 
 def update_variables(map_var, year, month, pack_size, multiply_by, line_price) -> int:
@@ -224,7 +236,7 @@ def index():
                     for page in reader.pages:
 
                         text = page.extract_text(0)
-                        extracted = extract_items_from_text(text)
+                        extracted = extract_items_from_text(text, file)
                         for item in extracted:
                             price_extracted = item[2]
                             mulitply_by = item[0]
@@ -280,8 +292,11 @@ def index():
         print("total dental: ", dental_quantities)
         print("total other: ", other_quantities)
 
-        current_year = "2025" #str(datetime.now().year) #"2025" #uncomment to get previous years numbers
+        current_year = str(datetime.now().year) #"2025" #uncomment to get previous years numbers
         print("current year: ", current_year)
+        if current_year == "2026":
+            for key, value in order_numbers.items():
+                print(key, value)
         #current_month = datetime.now().strftime("%B")
         #print("current month: ", current_month)
         ''''
@@ -315,7 +330,7 @@ def index():
         prices_other_year = 0.00
         for year, month_dict in years_totals.items():
             for month, month_item in month_dict.items():
-                if int(year) == int("2025"): #"2025" #uncomment to get previous years numbers and total
+                if int(year) == int(current_year): #"2025" #uncomment to get previous years numbers and total
                     total_pads_year += round(years_totals[year][month]["pads"]["quantity"])
                     prices_pads_year += round(years_totals[year][month]["pads"]["total_prices"], 2)
                     print("year: ", year, "month", month, "total pads", years_totals[year][month]["pads"]["quantity"], "total price", years_totals[year][month]["pads"]["total_prices"])
