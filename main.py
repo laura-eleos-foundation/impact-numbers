@@ -12,6 +12,7 @@ items_dict = {"pads": {"quantity": 0.00, "total_prices": 0.00},
              "bras": {"quantity": 0.00, "total_prices": 0.00},
              "dental": {"quantity": 0.00, "total_prices": 0.00},
              "shower": {"quantity": 0.00, "total_prices": 0.00},
+             "socks": {"quantity": 0.00, "total_prices": 0.00},
              "other": {"quantity": 0.00, "total_prices": 0.00}}
 months_dict = {"january": items_dict,
           "february": items_dict,
@@ -30,7 +31,7 @@ months_dict = {"january": items_dict,
 years = ["2025", "2026"]
 months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
 data = ["quantity", "total_prices"]
-items = ["pads", "tampons", "undies", "bras", "dental", "shower", "other"]
+items = ["pads", "tampons", "undies", "bras", "dental", "shower","socks", "other"]
 data_dict = {"quantity": 0.00, "total_prices": 0.00}
 years_totals = {}
 for year in years:
