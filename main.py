@@ -45,6 +45,15 @@ for year in years:
 
 app = Flask(__name__)
 
+@app.template_filter('comma')
+def comma_filter(value):
+    try:
+        # Tries to turn the value into an integer and format with commas
+        return f"{int(value):,}"
+    except (ValueError, TypeError):
+        # If the value is empty, a string, or None, return it as-is
+        return value
+
 def extract_items_from_text(text, filename):
     """
     Parses the raw text to find items and their quantities.
@@ -359,6 +368,7 @@ def index():
                     total_other_year += round(years_totals[year][month]["other"]["quantity"])
                     prices_other_year += round(years_totals[year][month]["other"]["total_prices"], 2)
                     print("year: ", year, "month", month, "total other", years_totals[year][month]["other"]["quantity"], "total price", years_totals[year][month]["other"]["total_prices"])
+
 
     return render_template("index.html", total_pads=pads_quantities, total_tampons=tampons_quantities,
                                    total_undies=undies_quantities, total_bras=bra_quantities,
